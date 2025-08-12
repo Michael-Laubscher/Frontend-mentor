@@ -1,6 +1,6 @@
-# Using the Figma design file
+Frondend Mentor:
+To practice and improve the UI Experience and my skills.
 
-Frontend mentor
----
+Url:
 
-Challenges! 🙂
+https://www.frontendmentor.io/home

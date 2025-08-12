@@ -126,7 +126,7 @@ html {
 }
 
 body {
-  font-family: "Outfit", sans-serif;
+  font-family: Lato, Helvetica, sans-serif;
   font-weight: var(--fw-400);
   background: var(--tertiary);
   line-height: 1.6;
