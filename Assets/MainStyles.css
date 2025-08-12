@@ -2,26 +2,19 @@
   /*Colors Start*/
   /*<-==========================================->*/
   --Color1-Pure-Black: #000000;
-  --Color1-Pure-white: #ffffff;
+  --Color1-Pure-white: #FFFFFF;
   --Color-OffWhite: #f4f4f4;
-  --Color-Base:#2D1E6B;
-  --primary: #574870;
-  --Secondary: #D14C11;
-  --tertiary: #52ABAE;
+  --primary: #1F314F;
+  --Secondary: #68778D;
+  --tertiary: #D5E1EF;
   /*Colors End*/
   /*<-==========================================->*/
   /*Font size Start*/
   /*<-==========================================->*/
-  --fs-XXXLarge-22: 70px;
-  --fs-XXLarge-22: 30px;
-  --fs-XLarge-22: 22px;
   --fs-Large-20: 20px;
-  --fs-MLarge-19: 19px;
   --fs-Medium-18: 18px;
   --fs-Normal-16: 16px;
-  --fs-SMedium-14: 15px;
   --fs-Small-12: 12px;
-  --fs-SuperSmall-10: 8px;
   /*Font Size End*/
   /*<-==========================================->*/
   /*Font weight Start*/
@@ -33,6 +26,7 @@
   /*Font weight End*/
   /*<-==========================================->*/
 }
+
 /* <-==========================-> */
 /* CSS REST */
 /* Box sizing rules */
@@ -44,6 +38,7 @@
   -ms-touch-action: auto;
   touch-action: auto;
 }
+
 /* Remove default margin */
 body,
 h1,
@@ -57,32 +52,38 @@ dl,
 dd {
   margin: 0;
 }
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
 }
+
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
 }
+
 /* Set core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
 }
+
 /* Make images easier to work with */
 img,
 picture {
   max-width: 100%;
   display: inline-block;
 }
+
 /* Inherit fonts for inputs and buttons */
 input,
 button,
@@ -90,6 +91,7 @@ textarea,
 select {
   font: inherit;
 }
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -115,17 +117,9 @@ label,
 span {
   font-size: 16px;
 }
+
 /* CSS REST End*/
 /* <-==========================-> */
-
-
-@font-face {
-  font-family: Lato;
-  src: url(../fonts/Lato/Lato-Regular.ttf);
-
-  font-family: OndoFontCompressed;
-  src: url(../fonts/OndoFontCompressed/FONTSPRINGDEMO-OndoBoldRegular.ttf);
-}
 
 html {
   font-size: 62.5%;
@@ -134,7 +128,7 @@ html {
 body {
   font-family: Lato, Helvetica, sans-serif;
   font-weight: var(--fw-400);
-  background: var(--Color-OffWhite);
+  background: var(--tertiary);
   line-height: 1.6;
   color: var(--Color1-Pure-Black);
   height: 100%;
@@ -142,116 +136,99 @@ body {
   width: 100%;
   font-size: 16px;
 }
+
 /*Body start*/
-.container-Pagination{
-  --max-width:90rem;
-  --paddingValue:5rem;
-  width: calc(var(--max-width) - var(--paddingValue));
-  min-height: 8rem;
-  margin: 3rem auto;
-  display: flex;
-  
-}
-.container-Pagination ul{
+.wrapper {
+  display: inline-block;
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 90rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+
+}
+
+.card {
+  background: var(--Color1-Pure-white);
+  display: flex;
+  padding: 1.8rem 1.8rem 3rem 1.8rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.05);
+
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  min-height: 4rem;
+  min-width: 5rem;
   width: 100%;
   height: 100%;
+  max-width: 32rem;
+  max-height: 90rem;
 }
-ul li{
-  list-style: none;
+
+.card img {
+ border-radius:1rem ;
+ -webkit-border-radius:1rem ;
+ -moz-border-radius:1rem ;
+ -ms-border-radius:1rem ;
+ -o-border-radius:1rem ;
 }
-.container-Pagination ul li{
+
+.bottom-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 6rem;
-  width:6rem;
-  border-radius: 50%;
-  color: var(--Color1-Pure-white);
-  background-color: #574870;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  position: relative;
-  z-index: 5;
-}
-.container-Pagination ul li::before{
-  content: "";
-  background-color: #574870;
-  width: 10rem;
-  height: 1.6rem;
-  position: absolute;
-  right: calc(3rem - 12rem);
-  z-index: -1;
+  gap: 2.4rem;
 }
 
- .container-Pagination ul li:last-child::before{
-  content: "";
-  display: none;
- }
-
-.container-Pagination ul li.active{
-  background-color: var(--Color-Base);
-}
-.container-Pagination ul li.active::after{
-  content:"";
-  background-color: transparent;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  height: 5rem;
-  width:5rem;
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  border: 3px solid var(--Color1-Pure-white)
+.bottom-content p {
+  text-align: center;
+  color: var(--primary);
+  font-weight: var(--fw-700);
+  font-size: 18px;
+  line-height: 2.6rem;
+  font-family: Outfit;
 }
 
-.pagination-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  }
+.bottom-content p:last-child {
+  color: var(--Secondary);
+  font-size: 14px;
+  font-weight: var(--fw-400);
+  letter-spacing: 0.2px;
+}
+
 /*Body End*/
 /*Media Queries Start*/
 /*<-==========================================->*/
-@media (min-width: 600px) {
-}
+@media (min-width: 600px) {}
 
 @media screen and (min-width: 992px) {
   html {
     font-size: 60%;
   }
 }
+
 @media (max-width: 1800px),
-  (max-width: 1700px),
-  (max-width: 1600px),
-  (-webkit-device-pixel-ratio: 1.1),
-  (-webkit-device-pixel-ratio: 1.25),
-  (-webkit-device-pixel-ratio: 1.5) {
+(max-width: 1700px),
+(max-width: 1600px),
+(-webkit-device-pixel-ratio: 1.1),
+(-webkit-device-pixel-ratio: 1.25),
+(-webkit-device-pixel-ratio: 1.5) {
+
   /*1800px*/
   html {
     font-size: 45%;
   }
 }
-@media (max-width: 1220px) {
- 
-}
 
-@media (max-width: 600px) {
- 
-}
+@media (max-width: 1220px) {}
+
+@media (max-width: 600px) {}
 
 @media (max-width: 285px) {
   html {
