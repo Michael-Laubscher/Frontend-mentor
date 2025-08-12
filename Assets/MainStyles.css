@@ -121,15 +121,6 @@ span {
 /* CSS REST End*/
 /* <-==========================-> */
 
-
-@font-face {
-  font-family: Lato;
-  src: url(../fonts/Lato/Lato-Regular.ttf);
-
-  font-family: OndoFontCompressed;
-  src: url(../fonts/OndoFontCompressed/FONTSPRINGDEMO-OndoBoldRegular.ttf);
-}
-
 html {
   font-size: 62.5%;
 }
@@ -137,7 +128,7 @@ html {
 body {
   font-family: Lato, Helvetica, sans-serif;
   font-weight: var(--fw-400);
-  background: var(--Color-OffWhite);
+  background: var(--tertiary);
   line-height: 1.6;
   color: var(--Color1-Pure-Black);
   height: 100%;
@@ -161,9 +152,9 @@ body {
 .card {
   background: var(--Color1-Pure-white);
   display: flex;
-  padding: 1.6rem 1.6rem 40rem 1.6rem;
+  padding: 1.8rem 1.8rem 3rem 1.8rem;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 2.4rem;
   box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.05);
 
@@ -174,14 +165,41 @@ body {
   -o-border-radius: 2rem;
   min-height: 4rem;
   min-width: 5rem;
+  width: 100%;
+  height: 100%;
+  max-width: 32rem;
+  max-height: 90rem;
 }
 
 .card img {
-  width: 16rem;
-  height: 16rem;
-  background-repeat: no-repeat;
-  background-size: contain;
-  flex-shrink: 0;
+ border-radius:1rem ;
+ -webkit-border-radius:1rem ;
+ -moz-border-radius:1rem ;
+ -ms-border-radius:1rem ;
+ -o-border-radius:1rem ;
+}
+
+.bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.bottom-content p {
+  text-align: center;
+  color: var(--primary);
+  font-weight: var(--fw-700);
+  font-size: 18px;
+  line-height: 2.6rem;
+  font-family: Outfit;
+}
+
+.bottom-content p:last-child {
+  color: var(--Secondary);
+  font-size: 14px;
+  font-weight: var(--fw-400);
+  letter-spacing: 0.2px;
 }
 
 /*Body End*/
