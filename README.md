@@ -1,39 +1,19 @@
-<!DOCTYPE html>
+# Using the Figma design file
 
-<html lang="en">
+Using this design file will help you practice building projects in the same way professionals do. Seeing the details in the design will help you improve your accuracy and build projects faster.
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>General</title>
-    <meta name="viewport" content="initial-scale = 1, user-scalable = no">
-    <meta name="description" content="Website">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="../Assets/MainStyles.css" rel="stylesheet" />
-</head>
+[Figma](https://www.figma.com/) is an extremely popular design tool with a generous free tier and support for both Windows and Mac computers.
 
-<body>
-    <main class="wrapper">
-        <div class="card">
-            <img src="../Assets/Images/image-qr-code.png" alt="">
-            <div class="bottom-content">
-                <p>Improve your front-end skills by building projects </p>
-                <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
-            </div>
-        </div>
-    </main>
+To get started with Figma, [download the correct app for your operating system](https://www.figma.com/downloads/). You can then open the app and open the `.fig` design file by dragging it over the app or using the "import" button.
 
-    <!-- Javascript Begin -->
-    <!--================================-->
-    <script src="../Scripts/Script.js"></script>
-    <!--================================-->
-    <!-- Javascript End -->
-</body>
+If you're going to use the Desktop App, you don't need to download the Font Installer from the downloads page. But if you're planning on using the Figma web app you should download and install it to ensure the fonts show up correctly.
 
+If you haven't used Figma before, we recommend reading our "[Figma for developers: How to work with a design file](https://www.frontendmentor.io/articles/figma-for-developers-how-to-work-with-a-design-file-m6CZKZ1rC1)" article. 
 
-</html>
+---
+
+**⚠️ IMPORTANT ⚠️: Please be sure not to share our design files with anyone else. We include `.gitignore` files in the starter code download to help prevent you from accidentally uploading it to GitHub. Another easy way to prevent this is to keep the design file separate from your codebase.**
+
+---
+
+We hope you enjoy the challenge! 🙂
