@@ -1,0 +1,311 @@
+:root {
+  /*Colors Start*/
+  /*<-==========================================->*/
+  --Color1-Pure-Black: #000000;
+  --Color1-Pure-white: #FFFFFF;
+  --Color-OffWhite: #f4f4f4;
+  --primary: #F4D04E;
+  --Secondary: #111111;
+  --tertiary: #6B6B6B;
+  /*Colors End*/
+  /*<-==========================================->*/
+  /*Font size Start*/
+  /*<-==========================================->*/
+  --fs-Large-20: 20px;
+  --fs-Medium-18: 18px;
+  --fs-Normal-16: 16px;
+  --fs-Small-12: 12px;
+  /*Font Size End*/
+  /*<-==========================================->*/
+  /*Font weight Start*/
+  /*<-==========================================->*/
+  --fw-400: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-900: 900;
+  /*Font weight End*/
+  /*<-==========================================->*/
+}
+
+/* <-==========================-> */
+/* CSS REST */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-touch-action: auto;
+  touch-action: auto;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: inline-block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+    -o-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+p,
+label,
+span {
+  font-size: 16px;
+}
+
+/* CSS REST End*/
+/* <-==========================-> */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Figtree", sans-serif;
+  font-weight: var(--fw-400);
+  background: var(--primary);
+  line-height: 1.6;
+  color: var(--Color1-Pure-Black);
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  font-size: 16px;
+}
+
+/*Body start*/
+.wrapper {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 90rem;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
+}
+
+.card {
+  background: var(--Color1-Pure-white);
+  display: flex;
+  padding: 1.8rem 1.8rem 3rem 1.8rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+
+
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  min-height: 58.2rem;
+  min-width: 5rem;
+  width: 100%;
+  height: auto;
+  max-width: 44.4rem;
+  border: 1px solid var(--Secondary);
+  box-shadow: 8px 8px 0 0 var(--Color1-Pure-Black);
+}
+
+.card img {
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  background: var(--primary);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.4rem;
+  width: 100%;
+
+}
+
+.content p,
+.author span {
+  text-align: center;
+  color: var(--Secondary);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+}
+
+.author span {
+  font-weight: 800;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px
+}
+
+.author .img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  background: url('../assets/images/image-avatar.webp') lightgray 50% / cover no-repeat;
+}
+
+.content p:last-child {
+  color: var(--tertiary);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.content h1 {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.status {
+  background: var(--primary);
+  width: 9.2rem;
+  height: 3.9rem;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: 21px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.attribution {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--Color1-Pure-white);
+  padding: 1rem;
+  color: var(--Secondary);
+  box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.05);
+}
+
+.attribution a {
+  color: var(--tertiary);
+}
+
+/*Body End*/
+/*Media Queries Start*/
+/*<-==========================================->*/
+@media (min-width: 600px) {}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 1800px),
+(max-width: 1700px),
+(max-width: 1600px),
+(-webkit-device-pixel-ratio: 1.1),
+(-webkit-device-pixel-ratio: 1.25),
+(-webkit-device-pixel-ratio: 1.5) {
+
+  /*1800px*/
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 1220px) {}
+
+@media (max-width: 600px) {
+  .card {
+    max-width: 38.4rem;
+  }
+
+  .attribution {
+    position: relative;
+  }
+  .content h1{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 285px) {}
+
+/*Media Queries End*/
+/*<-==========================================->*/
