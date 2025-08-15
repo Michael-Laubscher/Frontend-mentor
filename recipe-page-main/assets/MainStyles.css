@@ -154,10 +154,10 @@ body {
 .menu {
   background: var(--Color1-Pure-white);
   display: flex;
-  padding: 6rem;
+  padding:5rem 6rem 2rem 5rem;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2px;
   border-radius: 3.5rem;
   -webkit-border-radius: 3.5rem;
   -moz-border-radius: 3.5rem;
@@ -166,7 +166,7 @@ body {
   min-height: 58.2rem;
   min-width: 5rem;
   width: 100%;
-  margin-block: 10rem;
+  margin-block: 15rem;
   height: auto;
   min-width: 105rem;
   max-width: 140rem;
@@ -179,6 +179,9 @@ body {
   -moz-border-radius: 1.5rem;
   -ms-border-radius: 1.5rem;
   -o-border-radius: 1.5rem;
+}
+.banner p{
+  margin-block-end: 3rem;
 }
 
 .menu h1 {
@@ -209,7 +212,7 @@ body {
   padding-block: 0;
 }
 
-.content::before {
+.content::before:not(.menu:first-child .content) {
   content: "";
   display: inline-block;
   width: 100%;
@@ -218,6 +221,7 @@ body {
   bottom: 0;
   background-color: var(--Stone-150);
 }
+
 
 .prep ul,
 .content ul {
@@ -283,7 +287,7 @@ body {
 }
 
 .table div {
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
