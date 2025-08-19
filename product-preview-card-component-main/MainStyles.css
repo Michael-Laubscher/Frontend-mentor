@@ -4,13 +4,11 @@
   --Color1-Pure-Black: #000000;
   --Color1-Pure-white: hsl(0, 0%, 100%);
   --Color-OffWhite: #f4f4f4;
-  --primary: hsl(14, 45%, 36%);
-  --Secondary: hsl(332, 51%, 32%);
-  --tertiary: hsl(330, 100%, 98%);
-  --Stone-100: hsl(30, 54%, 90%);
-  --Stone-150: hsl(30, 18%, 87%);
-  --Stone-600: hsl(30, 10%, 34%);
-  --Stone-900: hsl(24, 5%, 18%);
+  --primary: hsl(158, 36%, 37%);
+  --Secondary: hsl(158, 42%, 18%);
+  --Black: hsl(212, 21%, 14%);
+  --Grey: hsl(228, 12%, 48%);
+  --Cream: hsl(30, 38%, 92%);
   /*Colors End*/
   /*<-==========================================->*/
   /*Font size Start*/
@@ -118,7 +116,7 @@ select {
 p,
 label,
 span {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* CSS REST End*/
@@ -129,7 +127,7 @@ html {
 }
 
 body {
-  font-family: "Outfit", sans-serif;
+  font-family: "Fraunces", serif;
   font-weight: var(--fw-400);
   background: var(--Stone-100);
   line-height: 1.6;
@@ -137,7 +135,7 @@ body {
   height: 100%;
   margin: 0;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /*Body start*/
@@ -186,7 +184,7 @@ body {
 }
 
 .menu h1 {
-  font-family: "Young Serif", serif;
+  font-family: "Montserrat", sans-serif;
   color: var(--Stone-900);
   font-weight: 500;
   margin-block: 1.5rem;
