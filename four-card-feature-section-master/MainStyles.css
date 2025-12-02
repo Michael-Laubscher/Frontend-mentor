@@ -4,12 +4,15 @@
   --Color1-Pure-Black: #000000;
   --Color1-Pure-white: hsl(0, 0%, 100%);
   --Color-OffWhite: #f4f4f4;
-  --Red: hsl(0, 78%, 62%);
-  --Cyan: hsl(180, 62%, 55%);
-  --Orange: hsl(34, 97%, 64%);
-  --Blue: hsl(212, 86%, 64%);
-  --Grey-500: hsl(234, 12%, 34%);
-  --Grey-400: hsl(212, 6%, 44%);
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  --dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --light-gray: hsl(0, 0%, 98%);
+
   /*Colors End*/
   /*<-==========================================->*/
   /*Font Start*/
@@ -25,11 +28,13 @@
   /*<-==========================================->*/
   /*Font weight Start*/
   /*<-==========================================->*/
-  --fw-200: 200;
-  --fw-400: 400;
-  --fw-600: 600;
+  --fw-light: 200;
+  --fw-regular: 400;
+  --fw-bold: 600;
   /*Font weight End*/
   /*<-==========================================->*/
+
+  --max-width: 1120px;
 }
 
 /* <-==========================-> */
@@ -131,9 +136,9 @@ html {
 }
 
 body {
-  font-family: "Fraunces", serif;
+  font-family: Arial, Helvetica, sans-serif, serif;
   font-weight: var(--fw-400);
-  background: var(--Cream);
+  background: var(--OffWhite);
   line-height: 1.6;
   color: var(--Black);
   height: 100%;
@@ -142,33 +147,183 @@ body {
   font-size: 15px;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--light-gray);
+  padding: 0 1.5rem;
+}
+
+/* ------------------------------ */
+/* SECTION LAYOUT */
+/* ------------------------------ */
+
+.four-card {
+  max-width: var(--max-width);
+  margin: 4rem auto;
+}
+
+/* ------------------------------ */
+/* HEADER */
+/* ------------------------------ */
+
+.four-card__header {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 4rem;
+}
+
+.title-light {
+  font-weight: var(--fw-light);
+  font-size: calc(var(--fs-Large-20) * 2);
+  color: var(--dark-blue);
+}
+
+.title-bold {
+  font-weight: var(--fw-bold);
+  font-size: calc(var(--fs-Large-20) * 2);
+  margin-bottom: 1rem;
+  color: var(--dark-blue);
+}
+
+.subtitle {
+  color: var(--grayish-blue);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-Normal-16);
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+
+  grid-template-areas:
+    ". team ."
+    "supervisor team calculator"
+    "supervisor karma calculator"
+    ". karma .";
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  color: var(--dark-blue);
+  font-size: var(--fs-Medium-18);
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--grayish-blue);
+  font-size: var(--fs-Medium-18);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.card img {
+  align-self: flex-end;
+}
+
+/* ------------------------------ */
+/* CARD COLORS */
+/* ------------------------------ */
+
+.card--supervisor {
+  grid-area: supervisor;
+  border-top: 4px solid var(--cyan);
+}
+
+.card--team {
+  grid-area: team;
+  border-top: 4px solid var(--red);
+}
+
+.card--karma {
+  grid-area: karma;
+  border-top: 4px solid var(--orange);
+}
+
+.card--calculator {
+  grid-area: calculator;
+  border-top: 4px solid var(--blue);
+}
+
+/* ------------------------------ */
+/* RESPONSIVE BREAKPOINTS */
+/* ------------------------------ */
+
+/* Tablet: stack vertically but centered nicely */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "team team"
+      "supervisor calculator"
+      "karma karma";
+  }
+}
+
+/* Mobile: pure vertical stack */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "team"
+      "supervisor"
+      "karma"
+      "calculator";
+  }
+
+  .title-light,
+  .title-bold {
+    font-size: 1.35rem;
+  }
+}
+
 /*Body start*/
 .wrapper {
   margin-inline: auto;
   width: 100%;
-  max-width: 90rem;
   display: flex;
-  align-items: center;
   justify-content: center;
   min-height: calc(100vh - 4rem);
 }
 
-.card {
-  background: var(--Color1-Pure-white);
-  display: flex;
-  padding: 0;
-  align-items: center;
-  border-radius: 1.5rem;
-  -webkit-border-radius: 1.5rem;
-  -moz-border-radius: 1.5rem;
-  -ms-border-radius: 1.5rem;
-  -o-border-radius: 1.5rem;
-  min-height: 10rem;
-  min-width: 5rem;
+.flex-direction-column {
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 8rem;
+  color: var(--Grey-500);
+  line-height: 1.2;
   width: 100%;
-  height: auto;
-  max-width: 140rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
+  max-width: 60rem;
+}
+
+header h1 {
+  font-size: calc(var(--fs-Large-20) + 1.5rem);
+  font-weight: var(--fw-200);
+}
+
+header h1:nth-child(2) {
+  font-weight: var(--fw-600);
+  margin-bottom: 3rem;
+}
+
+header p {
+  font-size: var(--fs-Small-12);
 }
 
 .attribution {
@@ -187,20 +342,8 @@ body {
   outline: 2px solid #003049;
   font-weight: var(--fw-600);
   border-radius: 1.2rem;
-  -webkit-border-radius: 1.2rem;
-  -moz-border-radius: 1.2rem;
-  -ms-border-radius: 1.2rem;
-  -o-border-radius: 1.2rem;
   box-shadow: 8px 8px 0 #111111;
-  -webkit-transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  -o-transform: translate(-50%);
   transition: all 450ms ease-in;
-  -webkit-transition: all 450ms ease-in;
-  -moz-transition: all 450ms ease-in;
-  -ms-transition: all 450ms ease-in;
-  -o-transition: all 450ms ease-in;
 }
 
 .isHidden input[type="checkbox"],
@@ -219,10 +362,6 @@ body {
   height: 2.5rem;
   background: var(--Color-OffWhite);
   border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
   border: 1px solid var(--primary);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -239,44 +378,20 @@ body {
   left: 50%;
   border-radius: 1.2rem;
   transform: translate(-50%, -50%) rotate(-135deg);
-  -webkit-transform: translate(-50%, -50%) rotate(-135deg);
-  -moz-transform: translate(-50%, -50%) rotate(-135deg);
-  -ms-transform: translate(-50%, -50%) rotate(-135deg);
-  -o-transform: translate(-50%, -50%) rotate(-135deg);
-  -webkit-border-radius: 1.2rem;
-  -moz-border-radius: 1.2rem;
-  -ms-border-radius: 1.2rem;
-  -o-border-radius: 1.2rem;
   transition: all 450ms ease-in;
-  -webkit-transition: all 450ms ease-in;
-  -moz-transition: all 450ms ease-in;
-  -ms-transition: all 450ms ease-in;
-  -o-transition: all 450ms ease-in;
 }
 
 .isHidden span::after {
   transform: translate(-50%, -50%) rotate(135deg);
-  -webkit-transform: translate(-50%, -50%) rotate(135deg);
-  -moz-transform: translate(-50%, -50%) rotate(135deg);
-  -ms-transform: translate(-50%, -50%) rotate(135deg);
-  -o-transform: translate(-50%, -50%) rotate(135deg);
 
 }
 
 .isHidden input[type="checkbox"]:checked~span::before {
   transform: translate(-50%, -50%) rotate(0deg);
-  -webkit-transform: translate(-50%, -50%) rotate(0deg);
-  -moz-transform: translate(-50%, -50%) rotate(0deg);
-  -ms-transform: translate(-50%, -50%) rotate(0deg);
-  -o-transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .isHidden input[type="checkbox"]:checked~span::after {
   transform: translate(-50%, -50%) rotate(90deg);
-  -webkit-transform: translate(-50%, -50%) rotate(90deg);
-  -moz-transform: translate(-50%, -50%) rotate(90deg);
-  -ms-transform: translate(-50%, -50%) rotate(90deg);
-  -o-transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .isHidden input[type="checkbox"]:checked~.attribution {
@@ -286,10 +401,6 @@ body {
 .attribution input[type="checkbox"]:checked~span a,
 .attribution input[type="checkbox"]:checked~span {
   transition: all 450ms ease-in;
-  -webkit-transition: all 450ms ease-in;
-  -moz-transition: all 450ms ease-in;
-  -ms-transition: all 450ms ease-in;
-  -o-transition: all 450ms ease-in;
   display: inline;
   opacity: 1;
 }
@@ -331,9 +442,29 @@ body {
   .attribution {
     width: calc(100% - 3rem);
   }
+
 }
 
-@media (max-width: 600px) {}
+@media (max-width: 950px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "team team"
+      "supervisor calculator"
+      "karma karma";
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "team"
+      "supervisor"
+      "calculator"
+      "karma";
+  }
+}
 
 @media (max-width: 285px) {}
 
