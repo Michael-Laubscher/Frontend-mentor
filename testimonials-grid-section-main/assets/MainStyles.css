@@ -1,0 +1,420 @@
+:root {
+  /* ================= COLORS ================= */
+
+  /* Primary */
+  --color-purple-50: hsl(260, 100%, 95%);
+  --color-purple-300: hsl(264, 82%, 80%);
+  --color-purple-500: hsl(263, 55%, 52%);
+
+  /* Neutral */
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey-100: hsl(214, 17%, 92%);
+  --color-grey-200: hsl(0, 0%, 81%);
+  --color-grey-400: hsl(224, 10%, 45%);
+  --color-grey-500: hsl(217, 19%, 35%);
+  --color-dark-blue: hsl(219, 29%, 14%);
+  --color-black: hsl(0, 0%, 7%);
+
+  /* Semantic (easier usage) */
+  --bg-body: var(--color-grey-100);
+  --bg-card: var(--color-white);
+  --text-primary: var(--color-grey-500);
+  --text-secondary: var(--color-grey-400);
+  --accent: var(--color-purple-500);
+
+  /* ================= TYPOGRAPHY ================= */
+
+  --font-family-base: 'Barlow Semi Condensed', sans-serif;
+
+  /* Base size = 13px */
+  --fs-base: 13px;
+  --fs-sm: 12px;
+  --fs-md: 13px;
+  --fs-lg: 16px;
+  --fs-xl: 20px;
+
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* ================= SPACING ================= */
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.25rem;
+  --space-lg: 2.5rem;
+  --space-xl: 5rem;
+
+  /* ================= BORDER / RADIUS ================= */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* ================= SHADOW ================= */
+
+  --shadow-card: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* <-==========================-> */
+/* CSS REST */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-touch-action: auto;
+  touch-action: auto;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: inline-block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+    -o-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+p,
+label,
+span {
+  font-size: 14px;
+}
+
+/* CSS REST End*/
+/* <-==========================-> */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/*Body start*/
+.wrapper {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 90rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-md);
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 70% 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  margin-block: 5rem;
+  padding: var(--space-xl);
+}
+
+.group-cards {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+}
+
+.card:nth-child(1) {
+  grid-column: span 2;
+  position: relative;
+}
+
+.card:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 10rem;
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 12.5rem;
+  height: 12.5rem;
+  z-index: 1;
+}
+
+.card:nth-child(4) {
+  grid-column: span 2;
+}
+
+.card {
+  background-color: var(--bg-card);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+}
+
+.grid>.card:last-child {
+  max-width: 32rem;
+  height: 100%;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+.card__header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.card__quote {
+  font-size: var(--fs-md);
+  opacity: 0.8;
+  z-index: 2;
+  position: relative;
+}
+
+.card__title {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-lg);
+  z-index: 2;
+  position: relative;
+}
+
+.card__text {
+  color: var(--text-secondary);
+}
+
+.card--purple {
+  background: hsl(263, 55%, 52%);
+  color: var(--color-white);
+}
+
+.card--dark {
+  background: hsl(217, 19%, 35%);
+  color: var(--color-white);
+}
+
+.card--light {
+  background: var(--color-white);
+  color: hsl(217, 19%, 35%);
+}
+
+.card--black {
+  background: hsl(219, 29%, 14%);
+  color: var(--color-white);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-block-end: 2rem;
+}
+
+.profile {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  outline: 2px solid var(--color-purple-500);
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-inline-start: 2rem;
+}
+
+.info h3 {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+}
+
+.info p {
+  font-size: var(--fs-sm);
+  font-weight: 400;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.attribution {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--color-white);
+  padding: 1rem;
+  color: var(--grey);
+  box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.05);
+}
+
+.attribution a {
+  color: var(--tertiary);
+}
+
+/*Body End*/
+/*Media Queries Start*/
+/*<-==========================================->*/
+@media (min-width: 600px) {}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 1800px),
+(max-width: 1700px),
+(max-width: 1600px),
+(-webkit-device-pixel-ratio: 1.1),
+(-webkit-device-pixel-ratio: 1.25),
+(-webkit-device-pixel-ratio: 1.5) {
+
+  /*1800px*/
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 1220px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .group-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card:nth-child(4),
+  .card:nth-child(1) {
+    grid-column: span 1;
+  }
+  .card:nth-child(1)::before{
+    display: none;
+  }
+
+  .grid>.card:last-child {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+ .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .group-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card:nth-child(4),
+  .card:nth-child(1) {
+    grid-column: span 1;
+  }
+
+  .grid>.card:last-child {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 285px) {}
+
+/*Media Queries End*/
+/*<-==========================================->*/
